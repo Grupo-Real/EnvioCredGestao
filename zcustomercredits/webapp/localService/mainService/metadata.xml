@@ -1,0 +1,506 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm" Version="4.0">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zui_customercredits_o1.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZC_CustomerCreditsType">
+                <Key>
+                    <PropertyRef Name="CompanyCode"/>
+                    <PropertyRef Name="AccountingDocument"/>
+                    <PropertyRef Name="FiscalYear"/>
+                    <PropertyRef Name="AccountingDocumentItem"/>
+                </Key>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AccountingDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="FiscalYear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AccountingDocumentItem" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="AmountInCompanyCodeCurrency" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="AccountingDocumentType" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="PostingDate" Type="Edm.Date"/>
+                <Property Name="DocumentDate" Type="Edm.Date"/>
+                <Property Name="CompanyBrand" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="SpecialGLCode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="AssignmentReference" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="DocumentItemText" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="BusinessPlace" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DocumentReferenceID" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="ReferenceDocumentKey" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="GLAccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="FinancialAccountType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="DebitCreditCode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ClearingAccountingDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ClearingDate" Type="Edm.Date"/>
+                <Property Name="Reference1IDByBusinessPartner" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Reference2IDByBusinessPartner" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Reference3IDByBusinessPartner" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="PaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DueCalculationBaseDate" Type="Edm.Date"/>
+                <Property Name="CashDiscount1Days" Type="Edm.Decimal" Nullable="false" Precision="3"/>
+                <Property Name="PaymentMethod" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PaymentBlockingReason" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zui_customercredits_o1.v0001.ZC_CustomerCreditsOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zui_customercredits_o1.v0001.SAP__Message)" Nullable="false"/>
+            </EntityType>
+            <ComplexType Name="ZC_CustomerCreditsOperationControl">
+                <Property Name="enviarCreditoGestao" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="enviarCreditoGestao" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_customercredits_o1.v0001.ZC_CustomerCreditsType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_customercredits_o1.v0001.ZC_CustomerCreditsType" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZC_CustomerCredits" EntityType="com.sap.gateway.srvd.zui_customercredits_o1.v0001.ZC_CustomerCreditsType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycode/0001;ps='srvd-zui_customercredits_o1-0001';va='com.sap.gateway.srvd.zui_customercredits_o1.v0001.et-zc_customercredits.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Empresa"/>
+                <Annotation Term="SAP__common.Heading" String="Empr"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/AccountingDocument">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Nº documento"/>
+                <Annotation Term="SAP__common.Heading" String="Nº doc."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº documento de um documento contábil"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/FiscalYear">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Exercício"/>
+                <Annotation Term="SAP__common.Heading" String="Ano"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/AccountingDocumentItem">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Item"/>
+                <Annotation Term="SAP__common.Heading" String="Itm"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº linha de lançamento no documento contábil"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/Customer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_customer/0001;ps='srvd-zui_customercredits_o1-0001';va='com.sap.gateway.srvd.zui_customercredits_o1.v0001.et-zc_customercredits.customer'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Cliente"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº cliente"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/AmountInCompanyCodeCurrency">
+                <Annotation Term="SAP__common.Label" String="Montante"/>
+                <Annotation Term="SAP__common.Heading" String="Montante em MI"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Montante em moeda interna"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/Currency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Moeda"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Código da moeda"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/AccountingDocumentType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tipo de documento"/>
+                <Annotation Term="SAP__common.Heading" String="Tp.doc."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/CompanyBrand">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Marca empresa"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/SpecialGLCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Cód.Razão Especial"/>
+                <Annotation Term="SAP__common.Heading" String="CE"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Código de Razão Especial"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/BusinessPlace">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Loc.negócios"/>
+                <Annotation Term="SAP__common.Heading" String="LNeg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Local de negócios"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/DocumentReferenceID">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Referência"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº documento de referência"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/ReferenceDocumentKey">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Chave refer."/>
+                <Annotation Term="SAP__common.Heading" String="Chv.ref."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Chave referência"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/GLAccount">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Conta do Razão"/>
+                <Annotation Term="SAP__common.Heading" String="Razão"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Conta do Razão da contabilidade geral"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/FinancialAccountType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tipo de conta"/>
+                <Annotation Term="SAP__common.Heading" String="TpCta"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/DebitCreditCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Cód.débito/crédito"/>
+                <Annotation Term="SAP__common.Heading" String="D/C"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Código débito/crédito"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/ClearingAccountingDocument">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Doc.compensação"/>
+                <Annotation Term="SAP__common.Heading" String="DocCompens"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº documento de compensação"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/Reference1IDByBusinessPartner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Chave referência 1"/>
+                <Annotation Term="SAP__common.Heading" String="Chv.ref.1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Chave de referência do parceiro de negócios"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/Reference2IDByBusinessPartner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Chave referência 2"/>
+                <Annotation Term="SAP__common.Heading" String="Chv.ref.2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Chave de referência do parceiro de negócios"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/Reference3IDByBusinessPartner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Chave referência 3"/>
+                <Annotation Term="SAP__common.Heading" String="ChvRefer 3"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Chave de referência para item de doc."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/PaymentTerms">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Condições pgto."/>
+                <Annotation Term="SAP__common.Heading" String="Condições de pagamento"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Chave de condições de pagamento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/PaymentMethod">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="FrmPgto"/>
+                <Annotation Term="SAP__common.Heading" String="MP"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Forma de pagamento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/PaymentBlockingReason">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bloqueio pgto."/>
+                <Annotation Term="SAP__common.Heading" String="BlP"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Chave para o bloqueio de pagamento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.enviarCreditoGestao(SAP__self.ZC_CustomerCreditsType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/enviarCreditoGestao"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType">
+                <Annotation Term="SAP__common.Label" String="Créditos de Clientes - Projeção UI"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Dados da Partida"/>
+                            <PropertyValue Property="ID" String="ItemData"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Crédito de Cliente"/>
+                        <PropertyValue Property="TypeNamePlural" String="Créditos de Clientes"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="AccountingDocument"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="Customer"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Envio de Créditos para o GESTÃO"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_customercredits_o1.v0001.enviarCreditoGestao(com.sap.gateway.srvd.zui_customercredits_o1.v0001.ZC_CustomerCreditsType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="AccountingDocument"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="AccountingDocumentItem"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="AmountInCompanyCodeCurrency"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="AccountingDocumentType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PostingDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="DocumentDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Marca / Org. Vendas"/>
+                            <PropertyValue Property="Value" Path="CompanyBrand"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="SpecialGLCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="AssignmentReference"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="DocumentItemText"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BusinessPlace"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                        <PropertyPath>Customer</PropertyPath>
+                        <PropertyPath>AccountingDocument</PropertyPath>
+                        <PropertyPath>AccountingDocumentType</PropertyPath>
+                        <PropertyPath>PostingDate</PropertyPath>
+                        <PropertyPath>CompanyBrand</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_CustomerCredits">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/PostingDate">
+                <Annotation Term="SAP__common.Label" String="Data de lançamento"/>
+                <Annotation Term="SAP__common.Heading" String="Dt.lçto."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data de lançamento no documento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/DocumentDate">
+                <Annotation Term="SAP__common.Label" String="Data do documento"/>
+                <Annotation Term="SAP__common.Heading" String="Data doc."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data no documento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/AssignmentReference">
+                <Annotation Term="SAP__common.Label" String="Atribuição"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº atribuição"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/DocumentItemText">
+                <Annotation Term="SAP__common.Label" String="Texto"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Texto do item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/ClearingDate">
+                <Annotation Term="SAP__common.Label" String="Data de compensação"/>
+                <Annotation Term="SAP__common.Heading" String="Compensaç."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/DueCalculationBaseDate">
+                <Annotation Term="SAP__common.Label" String="Dt.base prazo pgto."/>
+                <Annotation Term="SAP__common.Heading" String="Data base"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data base para cálculo do vencimento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/CashDiscount1Days">
+                <Annotation Term="SAP__common.Label" String="Dias 1"/>
+                <Annotation Term="SAP__common.Heading" String="Dia1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dias de desconto 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsType/__OperationControl/enviarCreditoGestao">
+                <Annotation Term="SAP__common.Label" String="Ctrl.ação dinâmica"/>
+                <Annotation Term="SAP__common.Heading" String="Controle de ação dinâmica"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Propriedade de ação dinâmica"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CustomerCreditsOperationControl/enviarCreditoGestao">
+                <Annotation Term="SAP__common.Label" String="Ctrl.ação dinâmica"/>
+                <Annotation Term="SAP__common.Heading" String="Controle de ação dinâmica"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Propriedade de ação dinâmica"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
